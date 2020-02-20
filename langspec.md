@@ -73,6 +73,7 @@ Functions
     /* Variable decleration */
     var out : array(string), count : u32
     /* Constants decleration, with bracket initializers */
+    /* There is no `char`, because, you know, Unicode reasons */
     const whitespace : array(string){".", " ", "\t", "\n"}
     /* Array concatnation, implemented internally through operator overloading */
     const delim : whitespace + array(string){";", ":", "{", "}"}
