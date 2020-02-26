@@ -70,24 +70,26 @@ Functions
 
 ```
 {u32, array} tokenize(var s : string) {
-    /* Variable decleration */
+    # Variable decleration
     var out : array(string), count : u32
-    /* Constants decleration, with bracket initializers */
-    /* There is no `char`, because, you know, Unicode reasons */
-    const whitespace : array(string){".", " ", "\t", "\n"}
-    /* Array concatnation, implemented internally through operator overloading */
-    const delim : whitespace + array(string){";", ":", "{", "}"}
+    
+    # Constants decleration, with bracket initializers
+    # There is no `char`, because, you know, Unicode reasons
+    var whitespace : array(string){".", " ", "\t", "\n"}
+    
+    # Array concatnation, implemented internally through operator overloading
+    var delim : whitespace + array(string){";", ":", "{", "}"}
 
-    for (var t : split(s, delim)) {
-        /* if statements must be followed by code block: {} */
-        if (!is_empty(t) && !in(t, whitespace)) {
+    for var t : split(s, delim) {
+        # if statements must be followed by code block: {}
+        if not is_empty(t) and not in(t, whitespace) {
             append(out, t)
         }
-        count ++
+        count = count + 1
     }
 
-    /* Returns an anonymous struct, type is inferenced */
-    /* When this function is compiled and mapped to a C function, this essentially returns a pointer */
+    # Returns an anonymous struct, type is inferenced
+    # When this function is compiled and mapped to a C function, this essentially returns a pointer
     return {count, out}
 }
 ```

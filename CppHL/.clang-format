@@ -1,0 +1,16 @@
+# The style used for all options not specifically set in the configuration.
+BasedOnStyle: Mozilla
+
+# Language, this format style is targeted at. Possible values: None, Cpp, Java, JavaScript, Proto.
+Language: Cpp
+# Format compatible with this standard, e.g. use A<A<int> > instead of A<A<int>> for LS_Cpp03. Possible values: Cpp03, Cpp11, Auto.
+Standard: Cpp11
+# The number of columns used for tab stops.
+TabWidth: 4
+# The way to use tab characters in the resulting file. Possible values: Never, ForIndentation, Always.
+UseTab: Never
+# Do not reflow comments
+ReflowComments: true
+
+AlwaysBreakAfterDefinitionReturnType: None
+AlwaysBreakAfterReturnType: None
